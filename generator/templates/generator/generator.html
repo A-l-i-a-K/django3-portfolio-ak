@@ -1,0 +1,24 @@
+{% extends 'portfolio\base.html' %}
+{% block content %}
+<h1> Генератор пароля </h1>
+<form action="password">
+<select name="length"> Задайте необходимую длину пароля
+    <option value="6">6</option>
+    <option value="7">7</option>
+    <option value="8">8</option>
+    <option value="9" selected>9</option>
+    <option value="10">10</option>
+    <option value="11">11</option>
+    <option value="12">12</option>
+</select>
+    <br>
+    <input type="checkbox" name="uppercase"> Верхний регист
+    <br>
+    <input type="checkbox" name="numbers"> Цифры
+    <br>
+    <input type="checkbox" name="special"> Знаки
+    <br>
+    <input type="submit" value="Сгенерировать пароль">
+</form>
+{% endblock %}
+

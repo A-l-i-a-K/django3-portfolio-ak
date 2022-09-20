@@ -1,0 +1,16 @@
+{% extends 'portfolio\base.html' %}
+{% block content %}
+
+<h1> Это мои проекты </h1>
+
+    {% for project in projects %}
+
+    <h2>{{ project.title }}</h2>
+    <br><a href="{{ project.url }}"> <img src="{{ project.image.url }}" width="200"></a>
+    <h2>{{ project.description }}</h2>
+    <br><br><br>
+
+
+    {% endfor %}
+
+{% endblock %}

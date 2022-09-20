@@ -1,0 +1,23 @@
+{% extends 'portfolio\base.html' %}
+{% block content %}
+
+<h1>Мое обучение</h1>
+<br>
+
+<h2>Я успешно прошел {{ blogs.count }} курсов:</h2>
+<br>
+<br>
+{% for blog in blogs %}
+
+<a href="{% url 'blog:detail' blog.id %}" target="_blank"><h2>{{ blog.title }}</h2></a>
+<h2>{{ blog.date|date:' d M Y' }}</h2>
+<h2>{{ blog.description|truncatechars:100 }}</h2>
+{% if blog.url %}
+<a href="{{ blog.url }}" target="_blank">Сертификат</a>
+{% endif %}
+<br>
+<br>
+{% endfor %}
+
+{% endblock %}
+
